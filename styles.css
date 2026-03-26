@@ -517,7 +517,7 @@ button {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 320px;
+  width: min(88vw, 320px);
   height: 100vh;
   background: #0b1121;
   z-index: 1000;
@@ -532,7 +532,7 @@ button {
 
 .mobile-nav a {
   display: block;
-  padding: 14px 0;
+  padding: 15px 4px;
   font-size: 1.05rem;
   font-weight: 500;
   color: rgba(255,255,255,0.8);
@@ -544,8 +544,38 @@ button {
 }
 
 .mobile-nav .btn {
-  margin-top: 20px;
-  width: 100%;
+  margin-top: 0;
+  margin-bottom: 18px;
+  width: fit-content;
+  min-width: 180px;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 13px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: none !important;
+}
+
+.mobile-nav .btn-primary {
+  background: #fff;
+  color: var(--color-primary);
+  border-color: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.mobile-nav .btn-secondary {
+  color: var(--color-primary);
+  background: #fff;
+  border: 1px solid transparent;
+  border-bottom: none;
+}
+
+.mobile-nav .btn-secondary:hover {
+  color: var(--color-primary);
+  border-color: transparent;
+  background: #f8fafc;
 }
 
 
@@ -1944,6 +1974,10 @@ button {
 
 /* ---------- Responsive Design ---------- */
 @media (max-width: 1024px) {
+  .header-inner {
+    padding: 0 28px;
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     padding: 100px 24px 60px;
@@ -2040,7 +2074,26 @@ button {
     padding: 80px 0;
   }
 
+  .container,
+  .container-wide {
+    padding: 0 18px;
+  }
+
+  .header-inner {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .logo-text {
+    font-size: 1.85rem;
+    line-height: 1;
+  }
+
   .nav {
+    display: none;
+  }
+
+  .nav-right {
     display: none;
   }
 
@@ -2058,20 +2111,73 @@ button {
     display: block;
   }
 
+  .mobile-nav {
+    width: 100%;
+    padding: 74px 18px 24px;
+  }
+
   .hero {
     min-height: auto;
   }
 
   .hero-inner {
-    padding: 80px 20px 50px;
+    gap: 28px;
+    padding: 48px 18px 50px;
   }
 
   .hero h1 {
     font-size: 2.25rem;
   }
 
+  .hero-badge {
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.45;
+    padding: 8px 14px;
+  }
+
   .hero-description {
     font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .hero-social-proof {
+    margin-top: 28px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-social-text {
+    text-align: center;
+  }
+
+  .dashboard-title {
+    font-size: 0.78rem;
+  }
+
+  .float-notif {
+    display: none;
+  }
+
+  .section-heading br,
+  .features-header .section-heading br,
+  .globe-inner .section-heading br,
+  .platform-header .section-heading br {
+    display: none;
+  }
+
+  .section-subtext {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .logistics-content,
+  .fulfillment-content,
+  .testimonial-content {
+    padding-top: 0;
   }
 
   .dashboard-grid {
@@ -2094,6 +2200,16 @@ button {
 
   .platform-mockup {
     transform: none;
+  }
+
+  .platform-content {
+    padding: 16px;
+  }
+
+  .platform-content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .final-cta {
@@ -2119,6 +2235,12 @@ button {
     padding: 16px 28px;
   }
 
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 22px;
+  }
+
   .btn-lg {
     padding: 18px 32px;
     width: 100%;
@@ -2130,6 +2252,37 @@ button {
 }
 
 @media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.6rem;
+  }
+
+  .mobile-nav {
+    padding: 72px 16px 22px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-badge {
+    font-size: 0.76rem;
+  }
+
+  .logistics-stats {
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
+  .globe-map-container {
+    padding: 10px 0;
+  }
+
+  .world-map-svg text {
+    display: none;
+  }
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
